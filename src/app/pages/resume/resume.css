@@ -1,0 +1,715 @@
+:host {
+  display: block;
+}
+
+/* =========================
+   RESUME SECTION
+========================= */
+
+.resume {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 7%;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(56, 189, 248, 0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(37, 99, 235, 0.15),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f0f9ff 50%,
+      #eaf4ff
+    );
+
+  scroll-margin-top: 100px;
+}
+
+/* =========================
+   GRID BACKGROUND
+========================= */
+
+.resume-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  animation: gridMove 20s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(45px);
+  }
+}
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+.resume-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 430px;
+  height: 430px;
+
+  top: -180px;
+  left: -170px;
+
+  background: rgba(56, 189, 248, 0.18);
+
+  animation: glowOne 8s ease-in-out infinite alternate;
+}
+
+.glow-two {
+  width: 470px;
+  height: 470px;
+
+  right: -210px;
+  bottom: -190px;
+
+  background: rgba(37, 99, 235, 0.16);
+
+  animation: glowTwo 10s ease-in-out infinite alternate;
+}
+
+@keyframes glowOne {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(50px, 35px);
+  }
+}
+
+@keyframes glowTwo {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-45px, -30px);
+  }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.resume-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.resume-heading {
+  text-align: center;
+
+  max-width: 800px;
+
+  margin: 0 auto 75px;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #0284c7;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  letter-spacing: 4px;
+}
+
+.resume-heading h1 {
+  margin: 0 0 20px;
+
+  color: #0f172a;
+
+  font-size: clamp(42px, 5vw, 60px);
+
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing: -2.5px;
+}
+
+.resume-heading h1 span {
+  color: #2563eb;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.resume-heading > p:last-child {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  color: #475569;
+
+  font-size: 18px;
+
+  line-height: 1.9;
+
+  font-weight: 500;
+}
+
+/* =========================
+   RESUME CARD
+========================= */
+
+.resume-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 0.75fr 1.25fr;
+
+  align-items: center;
+
+  gap: 55px;
+
+  padding: 50px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.93),
+      rgba(239, 246, 255, 0.76)
+    );
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.resume-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 65%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+}
+
+.resume-card:hover::before {
+  left: 140%;
+}
+
+.resume-card:hover {
+  transform: translateY(-9px);
+
+  border-color: rgba(37, 99, 235, 0.4);
+
+  box-shadow:
+    0 35px 85px rgba(37, 99, 235, 0.13);
+}
+
+/* =========================
+   DOCUMENT
+========================= */
+
+.resume-document {
+  position: relative;
+
+  width: 250px;
+  height: 315px;
+
+  margin: auto;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #bfdbfe;
+
+  box-shadow:
+    0 25px 55px rgba(37, 99, 235, 0.12);
+
+  overflow: hidden;
+
+  transform: rotate(-3deg);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.resume-card:hover .resume-document {
+  transform: rotate(0deg) translateY(-5px);
+
+  box-shadow:
+    0 30px 70px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================
+   DOCUMENT TOP
+========================= */
+
+.document-top {
+  display: flex;
+
+  gap: 7px;
+
+  padding: 13px 15px;
+
+  background: #f8fafc;
+
+  border-bottom: 1px solid #dbeafe;
+}
+
+.document-top span {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #bfdbfe;
+}
+
+/* =========================
+   DOCUMENT CONTENT
+========================= */
+
+.document-content {
+  padding: 35px 30px;
+}
+
+.document-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eff6ff,
+      #dbeafe
+    );
+
+  border: 1px solid #bfdbfe;
+
+  color: #2563eb;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+.document-lines {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.document-lines span {
+  display: block;
+
+  height: 8px;
+
+  border-radius: 10px;
+
+  background: #dbeafe;
+}
+
+.document-lines span:nth-child(1) {
+  width: 90%;
+}
+
+.document-lines span:nth-child(2) {
+  width: 75%;
+}
+
+.document-lines span:nth-child(3) {
+  width: 85%;
+}
+
+.document-lines span:nth-child(4) {
+  width: 55%;
+}
+
+/* =========================
+   RESUME INFO
+========================= */
+
+.resume-info {
+  position: relative;
+  z-index: 2;
+}
+
+.resume-tag {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.resume-info h2 {
+  margin: 0 0 10px;
+
+  color: #0f172a;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+
+  font-weight: 900;
+}
+
+.resume-info > p {
+  margin: 0 0 25px;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  font-weight: 700;
+}
+
+/* =========================
+   RESUME DETAILS
+========================= */
+
+.resume-details {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.resume-details span {
+  padding: 10px 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  border: 1px solid #dbeafe;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.resume-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  border-radius: 12px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 12px 30px rgba(37, 99, 235, 0.22);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.resume-button:hover {
+  transform: translateY(-4px);
+
+  background: #1d4ed8;
+
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.3);
+}
+
+.resume-button span {
+  font-size: 18px;
+}
+
+/* =========================
+   BOTTOM STATUS
+========================= */
+
+.resume-bottom {
+  width: fit-content;
+
+  margin: 60px auto 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 12px 20px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  border: 1px solid #dbeafe;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.status-light {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 5px rgba(34, 197, 94, 0.1);
+
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(34, 197, 94, 0.02);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .resume {
+    padding: 100px 6%;
+  }
+
+  .resume-card {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding: 40px;
+  }
+
+  .resume-info {
+    text-align: center;
+  }
+
+  .resume-details {
+    justify-content: center;
+  }
+
+  .resume-button {
+    margin: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .resume {
+    padding: 85px 5%;
+  }
+
+  .resume-heading {
+    margin-bottom: 50px;
+  }
+
+  .resume-heading h1 {
+    font-size: 36px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .resume-heading > p:last-child {
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
+
+  .resume-card {
+    padding: 28px 22px;
+
+    border-radius: 22px;
+  }
+
+  .resume-document {
+    width: 210px;
+    height: 275px;
+  }
+
+  .document-content {
+    padding: 28px 24px;
+  }
+
+  .document-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+  }
+
+  .resume-info h2 {
+    font-size: 28px;
+  }
+
+  .resume-info > p {
+    font-size: 14px;
+  }
+
+  .resume-details {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resume-details span {
+    text-align: center;
+  }
+
+  .resume-button {
+    width: 100%;
+  }
+
+  .resume-bottom {
+    width: 100%;
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 11px;
+  }
+}

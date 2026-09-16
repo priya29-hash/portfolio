@@ -1,0 +1,708 @@
+
+:host {
+  display: block;
+}
+
+/* =========================
+   CAREER JOURNEY
+========================= */
+
+.career {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 7%;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(56, 189, 248, 0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 80%,
+      rgba(37, 99, 235, 0.15),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f0f9ff 50%,
+      #eaf4ff
+    );
+
+  scroll-margin-top: 100px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.career-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  animation: gridMove 20s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(45px);
+  }
+}
+
+/* =========================
+   GLOW
+========================= */
+
+.career-glow {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  top: -180px;
+  left: -160px;
+
+  background: rgba(56, 189, 248, 0.16);
+
+  animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+.glow-two {
+  right: -180px;
+  bottom: -180px;
+
+  background: rgba(37, 99, 235, 0.14);
+
+  animation: floatGlowTwo 9s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(45px, 35px);
+  }
+}
+
+@keyframes floatGlowTwo {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-40px, -30px);
+  }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.career-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.career-heading {
+  max-width: 800px;
+
+  margin: 0 auto 75px;
+
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #0284c7;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  letter-spacing: 4px;
+}
+
+.career-heading h1 {
+  margin: 0 0 22px;
+
+  color: #0f172a;
+
+  font-size: clamp(42px, 5vw, 60px);
+
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing: -2.5px;
+}
+
+.career-heading h1 span {
+  color: #2563eb;
+}
+
+.career-heading h1::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 4px;
+
+  margin: 22px auto 0;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 15px rgba(37, 99, 235, 0.35);
+}
+
+.career-heading > p:last-child {
+  max-width: 750px;
+
+  margin: 25px auto 0;
+
+  color: #475569;
+
+  font-size: 18px;
+
+  line-height: 1.9;
+
+  font-weight: 500;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.career-timeline {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 35px;
+}
+
+.career-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 30px;
+
+  top: 30px;
+  bottom: 30px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #93c5fd 10%,
+      #2563eb 50%,
+      #93c5fd 90%,
+      transparent
+    );
+
+  opacity: 0.7;
+}
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+
+.career-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 60px 1fr;
+
+  gap: 30px;
+
+  align-items: start;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.career-number {
+  position: relative;
+
+  z-index: 3;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eff6ff,
+      #dbeafe
+    );
+
+  border: 1px solid #93c5fd;
+
+  color: #2563eb;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.14);
+
+  transition: all 0.4s ease;
+}
+
+.career-item:hover .career-number {
+  transform: scale(1.1) rotate(-5deg);
+
+  background: #2563eb;
+
+  color: white;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================
+   CARD
+========================= */
+
+.career-card {
+  position: relative;
+
+  padding: 32px 35px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(239, 246, 255, 0.78)
+    );
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.07);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.career-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.75),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+}
+
+.career-card:hover::before {
+  left: 140%;
+}
+
+.career-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(37, 99, 235, 0.4);
+
+  box-shadow:
+    0 30px 75px rgba(37, 99, 235, 0.13);
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.career-card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.career-type {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #0284c7;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.career-card h2 {
+  margin: 0 0 7px;
+
+  color: #0f172a;
+
+  font-size: 26px;
+
+  line-height: 1.25;
+
+  font-weight: 900;
+}
+
+.career-card-top p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  font-weight: 600;
+}
+
+.career-duration {
+  flex-shrink: 0;
+
+  padding: 9px 15px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.career-divider {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #dbeafe,
+      transparent
+    );
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.career-description {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+
+  margin: 0 0 25px;
+
+  color: #475569;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  font-weight: 500;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.career-tags {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.career-tags span {
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: rgba(239, 246, 255, 0.9);
+
+  border: 1px solid #dbeafe;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  transition: all 0.3s ease;
+}
+
+.career-tags span:hover {
+  transform: translateY(-3px);
+
+  background: #2563eb;
+
+  color: white;
+
+  border-color: #2563eb;
+}
+
+/* =========================
+   BOTTOM STATUS
+========================= */
+
+.career-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 55px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.status-light {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.7);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .career {
+    padding: 100px 6%;
+  }
+
+  .career-timeline::before {
+    left: 25px;
+  }
+
+  .career-item {
+    grid-template-columns: 50px 1fr;
+
+    gap: 20px;
+  }
+
+  .career-number {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+  }
+
+  .career-card {
+    padding: 28px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .career {
+    padding: 85px 5%;
+  }
+
+  .career-heading {
+    margin-bottom: 55px;
+  }
+
+  .career-heading h1 {
+    font-size: 36px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .career-heading > p:last-child {
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
+
+  .career-timeline {
+    gap: 25px;
+  }
+
+  .career-timeline::before {
+    display: none;
+  }
+
+  .career-item {
+    display: block;
+  }
+
+  .career-number {
+    margin-bottom: 15px;
+  }
+
+  .career-card {
+    padding: 24px 20px;
+
+    border-radius: 22px;
+  }
+
+  .career-card-top {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .career-card h2 {
+    font-size: 22px;
+  }
+
+  .career-card-top p {
+    font-size: 14px;
+  }
+
+  .career-description {
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
+
+  .career-duration {
+    align-self: flex-start;
+  }
+
+  .career-bottom {
+    margin-top: 40px;
+
+    font-size: 12px;
+  }
+}
